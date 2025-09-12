@@ -44,7 +44,7 @@ fun Practica3(){
 
     var sueldo by remember { mutableStateOf("") }
 
-    Column () {
+    Column (modifier = Modifier.fillMaxSize()) {
         Row() {
             Image(painter = painterResource(id = R.drawable.sat), contentDescription = null)
         }
@@ -53,8 +53,14 @@ fun Practica3(){
         }
         Row() {
             Button(onClick = {}, shape = RoundedCornerShape(40.dp)) {
-                Text("Botón redondeado")
+                Text("Calcular")
             }
+        }
+        Row (modifier = Modifier.padding(20.dp)){
+            OutlinedTextField(value=sueldo,label={Text("Cantidad de ISR")}, onValueChange = {sueldo=it})
+        }
+        Row (modifier = Modifier.padding(20.dp)){
+            OutlinedTextField(value=sueldo,label={Text("Sueldo real estimado")}, onValueChange = {sueldo=it})
         }
 
     }
