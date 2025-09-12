@@ -6,6 +6,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
@@ -20,7 +21,9 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -44,7 +47,8 @@ fun Practica3(){
 
     var sueldo by remember { mutableStateOf("") }
 
-    Column (modifier = Modifier.fillMaxSize()) {
+    Column (modifier = Modifier.fillMaxSize().padding(10.dp,10.dp,10.dp,30.dp),
+        horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.Center) {
         Row() {
             Image(painter = painterResource(id = R.drawable.sat), contentDescription = null)
         }
@@ -56,13 +60,18 @@ fun Practica3(){
                 Text("Calcular")
             }
         }
-        Row (modifier = Modifier.padding(20.dp)){
+        Row (modifier = Modifier.padding(10.dp)){
             OutlinedTextField(value=sueldo,label={Text("Cantidad de ISR")}, onValueChange = {sueldo=it})
         }
-        Row (modifier = Modifier.padding(20.dp)){
+        Row (modifier = Modifier.padding(10.dp)){
             OutlinedTextField(value=sueldo,label={Text("Sueldo real estimado")}, onValueChange = {sueldo=it})
         }
 
     }
+
+}
+
+@Composable
+fun impuestoRango(){
 
 }
