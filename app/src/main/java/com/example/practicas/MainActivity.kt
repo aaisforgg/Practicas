@@ -105,6 +105,7 @@ fun Practica1(){
                 Text("Enviar")
             }
 
+
             Button(
                 onClick = {
                     valorA = ""
